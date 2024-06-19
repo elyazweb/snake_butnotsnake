@@ -230,6 +230,42 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+
+
+    let touchstartX = 0;
+    let touchstartY = 0;
+    document.addEventListener("touchstart", (e) => {
+        touchstartX = e.touches[0].clientX;
+        touchstartY = e.touches[0].clientY;
+    });
+
+    document.addEventListener("touchend", (e) => {
+        if (!moving) {
+            start();
+            moving = true;
+            body = document.getElementsByTagName("body")[0];
+            body.style.overflow = "hidden";
+        }
+        let touchendX = e.changedTouches[0].clientX;
+        let touchendY = e.changedTouches[0].clientY;
+        let deltaX = touchendX - touchstartX;
+        let deltaY = touchendY - touchstartY;
+
+        if (Math.abs(deltaX) > Math.abs(deltaY)) {
+            if (deltaX > 0 && direction !== "left") {
+                direction = "right";
+            } else if (deltaX < 0 && direction !== "right") {
+                direction = "left";
+            }
+        } else {
+            if (deltaY > 0 && direction !== "up") {
+                direction = "down";
+            } else if (deltaY < 0 && direction !== "down") {
+                direction = "up";
+            }
+        }
+    });
+
     function moveSnake() {
         if (direction === "up" && y > 0) {
             y -= 50;
