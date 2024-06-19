@@ -80,6 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
             logo = localStorage.getItem("logo") || "the_snake.png";
             snake.style.backgroundImage = `url(${logo})`;
             snake.style.backgroundColor = "transparent";
+            snake.style.border = `2px solid black`;
             console.log("it's working");
 
         } else if (settingColorOrLogo === 2) {
@@ -147,7 +148,6 @@ document.addEventListener('DOMContentLoaded', () => {
             settingColorOrLogo = 1;
             localStorage.setItem("settingColorOrLogo", settingColorOrLogo);
             console.log(settingColorOrLogo);
-            snake.style.border = "2px solid black";
         }
     });
 
