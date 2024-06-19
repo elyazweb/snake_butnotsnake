@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Best: <span id="best">0</span></h1>
+    <h1>Score: <span id="score">0</span></h1>
+    <div class="square">
+        <div class="gameOver"><h3>Game Over, your score is <span id="score">0</span></h3></div>
+        <div class="squares"></div>
+        <div id="snake" class="snake"></div>
+        <div id="food" class="food"></div>
+        <audio src="eaten_apple.mp3" controls></audio>
+    </div>
+    <div id="buttons" class="buttons">
+        <button class="start" id="start">Start</button>
+        <button class="start" id="pause">Pause</button>
+    </div>
+    <div class="settings">
+        <div class="colors">
+            <h4 for="speed">Speed:</h4>
+            <select name="speed" id="speed">
+                <option value="0.1">Dead of boredom</option>
+                <option value="1">Slow</option>
+                <option value="2" selected>Normal</option>
+                <option value="5">Fast</option>
+                <option value="10">Impossible</option>
+            </select>   
+            <h4>Single Color:</h4>
+            <div class="singleColors">
+                <button class="color singleColor" style="background-color: #0000ff;" value="#0000ff"></button>
+                <button class="color singleColor" style="background-color: #ff0000;" value="#ff0000"></button>
+                <button class="color singleColor" style="background-color: #008000;" value="#008000"></button>
+                <button class="color singleColor" style="background-color: #ffff00;" value="#ffff00"></button>
+                <button class="color singleColor" style="background-color: #800080;" value="#800080"></button>
+                <button class="color singleColor" style="background-color: #ffa500;" value="#ffa500"></button>
+                <button class="color singleColor" style="background-color: #ffc0cb;" value="#ffc0cb"></button>
+                <button class="color singleColor" style="background: #a52a2a;" value="#a52a2a"></button>
+                <button class="color singleColor" style="background-color: #000000;" value="#000000"></button>
+                <button class="color singleColor" style="background-color: #ffffff;" value="#ffffff"></button>
+                <button class="color singleColor" style="background-color: #808080;" value="#808080"></button>
+                <button class="color singleColor" style="background-color: #add8e6;" value="#add8e6"></button>
+                <button class="color singleColor" style="background-color: #90ee90;" value="#90ee90"></button>
+                <button class="color singleColor" style="background-color: #ffb6c1;" value="#ffb6c1"></button>
+                <button class="color singleColor" style="background-color: #ffffe0;" value="#ffffe0"></button>
+            </div>
+            <h4>Gradients:</h4>
+            <div class="gradients">
+                <label for="gradient" class="form-label">1st Color:</label>
+                <input type="text" class="form-control" id="gradient">
+                <label for="gradient2" class="form-label">2nd Color:</label>
+                <input type="text" class="form-control" id="gradient2">
+                <button id="gradientSubmit" type="submit" class="btn">Submit</button>
+            </div>
+            <h4>Logos:</h4>
+            <div class="logos">
+                <div class="logo samsung" value="samsung" style="background: url(the_snake.jpg); background-size: cover;"></div>
+                <div class="logo mcdonalds" value="mcDonald's" style="background: url(mcdo.png); background-size: cover;"></div>
+                <div class="logo coke" value="coke" style="background: url(coke.png); background-size: cover;"></div>
+                <div class="logo microsoft" value="microsoft" style="background: url(microsoft.png); background-size: cover;"></div>
+                <div class="logo google" value="google" style="background: url(google.png); background-size: cover;"></div>
+                <div class="logo nike" value="nike" style="background: url(nike.jpg); background-size: cover;"></div>
+                <div class="logo amazon" value="amazon" style="background: url(amazon.png); background-size: cover;"></div>
+                <div class="logo tesla" value="tesla" style="background: url(tesla.png); background-size: cover;"></div>
+                <div class="logo nasa" value="nasa" style="background: url(nasa.png); background-size: cover;"></div>
+                <div class="logo facebook" value="facebook" style="background: url(facebook.png); background-size: cover;"></div>
+                <div class="logo youtube" value="youtube" style="background: url(youtube.png); background-size: cover;"></div>
+                <div class="logo instagram" value="instagram" style="background: url(instagram.jpg); background-size: contain;"></div>
+                <div class="logo whatsapp" value="whatsapp" style="background: url(whatsapp.png); background-size: cover;"></div>
+                <div class="logo linkedin" value="linkedin" style="background: url(linkedin.png); background-size: cover;"></div>
+                <div class="logo pinterest" value="pinterest" style="background: url(pinterest.png); background-size: cover;"></div>
+                <div class="logo paypal" value="paypal" style="background: url(paypal.png); background-size: cover;"></div>
+                <div class="logo uber" value="uber" style="background: url(uber.png); background-size: cover;"></div>
+                <div class="logo netflix" value="netflix" style="background: url(netflix.png); background-size: cover;"></div>
+                <div class="logo spotify" value="spotify" style="background: url(spotify.png); background-size: cover;"></div>
+                <div class="logo reddit" value="reddit" style="background: url(reddit.png); background-size: cover;"></div>
+            </div>
+                <h4>Uploader</h4>
+                <label for="text" class="form-label">Link of resource: </label>
+                <input type="text" id="text" class="form-control">
+                <button type="submit" class="btn btn-primary" id="submit">Download File</button>
+            <div class="grid">
+                <h4>Grid:</h4>
+                <label for="grid" class="form-label">Show grid: </label>
+                <input type="checkbox" id="grid">
+                <label for="color" class="form-label">Grid lines color: </label>
+                <input type="color" id="grid-color">
+                <span id="border" class="form-span" for="border">#000000</span>
+                <label for="background" class="form-label">Grid background color: </label>
+                <input type="color" id="background">
+                <span id="background2" class="form-span" for="background2">#ffffff</span>
+            </div>
+        </div> 
+
+    </div>
+
+
+    <script src="index.js"></script>
+</body>
+</html>
