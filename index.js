@@ -143,11 +143,11 @@ document.addEventListener('DOMContentLoaded', () => {
             snake.style.backgroundImage = `url(${logo})`;
             console.log(logo);
             snake.style.backgroundColor = "transparent";
-            snake.style.border = "1px solid black";
             localStorage.setItem("logo", logo);
             settingColorOrLogo = 1;
             localStorage.setItem("settingColorOrLogo", settingColorOrLogo);
             console.log(settingColorOrLogo);
+            snake.style.border = "2px solid black";
         }
     });
 
